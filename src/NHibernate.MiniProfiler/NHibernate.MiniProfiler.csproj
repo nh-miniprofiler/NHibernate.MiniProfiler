@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <SignAssembly>True</SignAssembly>
+        <PublicSign>true</PublicSign>
+        <AssemblyOriginatorKeyFile>..\..\NHibernate.MiniProfiler.snk</AssemblyOriginatorKeyFile>
+        <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+        <LangVersion>latest</LangVersion>
+        <Description>MiniProfiler integration for NHibernate</Description>
+        <Copyright>Copyright 2023 Dennis Gronewold</Copyright>
+        <Authors>Dennis Gronewold</Authors>
+        <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+        <PackageLicenseExpression>LGPL-2.1-only</PackageLicenseExpression>
+        <PackageTags>nhibernate miniprofiler</PackageTags>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/nh-miniprofiler/NHibernate.MiniProfiler</RepositoryUrl>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <IsPackable>true</IsPackable>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <DebugType>embedded</DebugType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MiniProfiler.Shared" Version="[4.0.0, 5.0.0)" />
+    </ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+        <PackageReference Include="NHibernate" Version="[5.1.0,5.2.0)" />
+    </ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net461'">
+        <PackageReference Include="NHibernate" Version="[5.0.0,5.2.0)" />
+        <PackageReference Include="Iesi.Collections" Version="4.0.4" />
+    </ItemGroup>
+
+    <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="docs\README.md" Pack="true" PackagePath="\" />
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="MinVer" Version="4.3.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+</Project>
