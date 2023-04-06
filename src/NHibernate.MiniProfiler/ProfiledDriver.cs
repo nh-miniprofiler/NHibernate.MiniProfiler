@@ -69,6 +69,8 @@ namespace NHibernate.MiniProfiler
 
         public override DateTime MinDate => driver.MinDate;
 
+        public override int CommandTimeout => driver.CommandTimeout;
+
         public override void Configure(IDictionary<string, string> settings) => driver.Configure(settings);
 
         public override DbCommand GenerateCommand(CommandType type, SqlString sqlString, SqlType[] parameterTypes)
