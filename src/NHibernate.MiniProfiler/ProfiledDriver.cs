@@ -112,5 +112,7 @@ namespace NHibernate.MiniProfiler
         // Called from Loader
         // ReSharper disable once UnusedMember.Global
         public new void RemoveUnusedCommandParameters(DbCommand cmd, SqlString sqlString) => driver.RemoveUnusedCommandParameters(cmd, sqlString);
+
+        public override DbTransaction BeginTransaction(IsolationLevel isolationLevel, DbConnection connection) => driver.BeginTransaction(isolationLevel, connection);
     }
 }

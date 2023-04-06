@@ -20,16 +20,17 @@
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <DebugType>embedded</DebugType>
+        <NoWarn>$(NoWarn);CS0618</NoWarn>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="MiniProfiler.Shared" Version="[4.0.0, 5.0.0)" />
     </ItemGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-        <PackageReference Include="NHibernate" Version="[5.1.0,5.2.0)" />
+        <PackageReference Include="NHibernate" Version="[5.2.0,5.3.0)" />
     </ItemGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'net461'">
-        <PackageReference Include="NHibernate" Version="[5.0.0,5.2.0)" />
+        <PackageReference Include="NHibernate" Version="[5.2.0,5.3.0)" />
         <PackageReference Include="Iesi.Collections" Version="4.0.4" />
     </ItemGroup>
 
