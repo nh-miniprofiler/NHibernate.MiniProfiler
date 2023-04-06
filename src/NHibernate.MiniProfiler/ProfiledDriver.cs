@@ -116,5 +116,7 @@ namespace NHibernate.MiniProfiler
         public new void RemoveUnusedCommandParameters(DbCommand cmd, SqlString sqlString) => driver.RemoveUnusedCommandParameters(cmd, sqlString);
 
         public override DbTransaction BeginTransaction(IsolationLevel isolationLevel, DbConnection connection) => driver.BeginTransaction(isolationLevel, connection);
+
+        public override DbCommand UnwrapDbCommand(DbCommand command) => command is ProfiledDbCommand profiledDbCommand ? base.UnwrapDbCommand(profiledDbCommand.InternalCommand) : base.UnwrapDbCommand(command);
     }
 }
