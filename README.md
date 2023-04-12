@@ -17,7 +17,7 @@ or by decorating the driver class:
 var cfg = new Configuration().DataBaseIntegration(c => { c.Driver<ProfiledDriver<MySqlConnectorDriver>>(); });
 
 // Fluent NHibernate
-MySQLConfiguration.Standard.Driver<ProfiledDriver<MySqlConnectorDriver>>().
+MySQLConfiguration.Standard.Driver<ProfiledDriver<MySqlConnectorDriver>>();
 ```
 
 ### Query Cache/2nd Level Cache Profiling:
