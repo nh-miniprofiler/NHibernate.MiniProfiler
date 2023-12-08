@@ -23,11 +23,11 @@ MySQLConfiguration.Standard.Driver<ProfiledDriver<MySqlConnectorDriver>>();
 ### Query Cache/2nd Level Cache Profiling:
 In addition to profiling SQL statements you can also profile the Query/2nd Level Cache.
 
-Using the ProfiledDriver extension method:
+Using the *ProfiledCache* extension method:
 ```
 var cfg = new Configuration().Cache(c => { c.ProfiledCache<CoreMemoryCacheProvider>(); });
 ```
-Decorating the driver class:
+Decorating the cache provider class:
 ```
 var cfg = new Configuration().Cache(c => { c.Provider<ProfiledCacheProvider<CoreMemoryCacheProvider>>(); });
 ```
