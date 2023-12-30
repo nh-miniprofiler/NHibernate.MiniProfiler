@@ -9,7 +9,7 @@
         <Description>MiniProfiler integration for NHibernate</Description>
         <Copyright>Copyright 2023 Dennis Gronewold</Copyright>
         <Authors>Dennis Gronewold</Authors>
-        <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+        <PackageReleaseNotes>Update NHibernate to 5.5</PackageReleaseNotes>
         <PackageLicenseExpression>LGPL-2.1-only</PackageLicenseExpression>
         <PackageTags>nhibernate miniprofiler</PackageTags>
         <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -27,10 +27,10 @@
         <PackageReference Include="MiniProfiler.Shared" Version="[4.0.0, 5.0.0)" />
     </ItemGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-        <PackageReference Include="NHibernate" Version="[5.4.0,5.5.0)" />
+        <PackageReference Include="NHibernate" Version="[5.5.0,5.6.0)" />
     </ItemGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'net461'">
-        <PackageReference Include="NHibernate" Version="[5.4.0,5.5.0)" />
+        <PackageReference Include="NHibernate" Version="[5.5.0,5.6.0)" />
         <PackageReference Include="Iesi.Collections" Version="4.0.4" />
     </ItemGroup>
 
