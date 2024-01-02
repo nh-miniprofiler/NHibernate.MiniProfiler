@@ -1,5 +1,7 @@
 # NHibernate.MiniProfiler
 
+[![NuGet](https://img.shields.io/nuget/vpre/NHibernate.MiniProfiler.svg)](https://www.nuget.org/packages/NHibernate.MiniProfiler/)
+
 MiniProfiler integration for NHibernate, suitable for all database drivers.
 
 ## Usage
