@@ -6,7 +6,7 @@
         <AssemblyOriginatorKeyFile>..\..\NHibernate.MiniProfiler.snk</AssemblyOriginatorKeyFile>
         <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
         <LangVersion>latest</LangVersion>
-        <Description>MiniProfiler integration for NHibernate</Description>
+        <Description>MiniProfiler integration for NHibernate, suitable for all database drivers.</Description>
         <Copyright>Copyright 2023 Dennis Gronewold</Copyright>
         <Authors>Dennis Gronewold</Authors>
         <PackageReleaseNotes>Update NHibernate to 5.5</PackageReleaseNotes>
