@@ -35,7 +35,7 @@ namespace NHibernate.MiniProfiler
     public sealed class ProfiledDriver<TDriver> : DriverBase, IEmbeddedBatcherFactoryProvider where TDriver : DriverBase, new()
     {
         private readonly TDriver driver;
-        
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ProfiledDriver{TDriver}"/> class.
         /// </summary>
@@ -70,6 +70,16 @@ namespace NHibernate.MiniProfiler
         public override DateTime MinDate => driver.MinDate;
 
         public override int CommandTimeout => driver.CommandTimeout;
+
+#if NET6_0_OR_GREATER
+        public override bool CanCreateBatch => driver.CanCreateBatch;
+
+        public override DbBatch CreateBatch() => driver.CreateBatch();
+
+        public override DbBatchCommand CreateDbBatchCommandFromDbCommand(DbBatch dbBatch, DbCommand dbCommand) => driver.CreateDbBatchCommandFromDbCommand(dbBatch, dbCommand);
+
+        public new void PrepareBatch(DbBatch batch) => driver.PrepareBatch(batch);
+#endif
 
         public override void Configure(IDictionary<string, string> settings) => driver.Configure(settings);
 
