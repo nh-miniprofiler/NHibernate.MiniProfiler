@@ -10,8 +10,7 @@
         <Copyright>Copyright 2023-25 Dennis Gronewold</Copyright>
         <Authors>Dennis Gronewold</Authors>
         <PackageReleaseNotes>
-            Update NHibernate to 5.5.2
-            Disable public signing
+            Update NHibernate to 5.6
         </PackageReleaseNotes>
         <PackageLicenseExpression>LGPL-2.1-only</PackageLicenseExpression>
         <PackageTags>nhibernate miniprofiler</PackageTags>
@@ -30,13 +29,13 @@
         <PackageReference Include="MiniProfiler.Shared" Version="[4.0.0, 5.0.0)" />
     </ItemGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'net60' ">
-        <PackageReference Include="NHibernate" Version="[5.6.0-dev.5027,5.7.0)" />
+        <PackageReference Include="NHibernate" Version="[5.6.0, 5.7.0)" />
     </ItemGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-        <PackageReference Include="NHibernate" Version="[5.6.0-dev.5027,5.7.0)" />
+        <PackageReference Include="NHibernate" Version="[5.6.0, 5.7.0)" />
     </ItemGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'net461'">
-        <PackageReference Include="NHibernate" Version="[5.6.0-dev.5027,5.7.0)" />
+        <PackageReference Include="NHibernate" Version="[5.6.0, 5.7.0)" />
         <PackageReference Include="Iesi.Collections" Version="4.1.1" />
     </ItemGroup>
 
